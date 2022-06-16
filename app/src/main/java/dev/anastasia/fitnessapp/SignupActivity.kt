@@ -11,7 +11,6 @@ import com.google.android.material.textfield.TextInputLayout
 class SignupActivity : AppCompatActivity() {
     lateinit var tvLogIn:TextView
     lateinit var btnSignup:Button
-    lateinit var btnSignUp: Button
     lateinit var tilFirstName: TextInputLayout
     lateinit var etFirstName: EditText
     lateinit var tilLastName: TextInputLayout
@@ -22,7 +21,6 @@ class SignupActivity : AppCompatActivity() {
     lateinit var etPassword: EditText
     lateinit var tilConfirmPassword: TextInputLayout
     lateinit var etConfirmPassword: EditText
-    lateinit var tvLogin: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
@@ -45,12 +43,12 @@ class SignupActivity : AppCompatActivity() {
             startActivity(intent)
         }
        btnSignup.setOnClickListener {
-           var intent=Intent(this,HomeActivity::class.java)
-           startActivity(intent)
            validateSignup()
        }
+
     }
     fun validateSignup() {
+        var error=true
         var firstName = etFirstName.text.toString()
         var lastName = etLastName.text.toString()
         var email = etEmail.text.toString()
@@ -58,25 +56,29 @@ class SignupActivity : AppCompatActivity() {
         var confirmpassword = etConfirmPassword.text.toString()
 
         if (firstName.isBlank()) {
-            etFirstName.error = "input required"
+            etFirstName.error = "input is required"
         }
         if (lastName.isBlank()) {
-            etLastName.error = "input required"
+            etLastName.error = "input is required"
         }
 
         if (email.isBlank()) {
-            etEmail.error = "input required"
+            etEmail.error = "input is required"
         }
 
         if (password.isBlank()) {
-            etPassword.error = "input required"
+            etPassword.error = "input is required"
         }
 
         if (confirmpassword.isBlank()) {
-            etConfirmPassword.error = "input required"
+            etConfirmPassword.error = "input is required"
         }
         if (password!=confirmpassword){
-            tilPassword.error="Emails don't match "
+            tilPassword.error="Passwords doesn't match "
+        }
+        if(!error){
+            var intent=Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 

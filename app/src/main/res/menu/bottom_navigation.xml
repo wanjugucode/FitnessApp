@@ -11,7 +11,7 @@
         android:icon="@drawable/ic_baseline_graphic_eq_24"
         android:title="@string/track"/>
     <item
-        android:id="@+id/People"
+        android:id="@+id/Profile"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_people_24"
         android:title="@string/People"/>

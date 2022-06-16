@@ -5,7 +5,6 @@
     <string name="login">Login</string>
     <string name="don_t_have_an_account_signup">Don/\'t have an account? Signup</string>
     <string name="signup">Don\'t have an account? Signup</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="People" />
     <string name="track" />
@@ -16,4 +15,8 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="already_have_an_account_login">Already have an account? Login</string>
     <string name="signup2">Signup</string>
+    <string name="plan_fragment">PLAN FRAGMENT</string>
+    <string name="profile_fragment">PROFILE FRAGMENT</string>
+    <string name="track_fragement">TRACK FRAGEMENT</string>
+    <string name="track_fragment">TRACK FRAGMENT</string>
 </resources>
