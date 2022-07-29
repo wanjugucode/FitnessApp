@@ -5,48 +5,44 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
+import dev.anastasia.fitnessapp.databinding.ActivityLoginBinding
 
 
 class LoginActivity : AppCompatActivity() {
-    lateinit var btnLogin:Button
-    lateinit var tvSignup:TextView
-    lateinit var etEmail:TextView
-    lateinit var etPassword:TextView
-
+lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding=ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btnLogin=findViewById(R.id.btnLogin)
-        tvSignup=findViewById(R.id.tvSignup)
-        etEmail=findViewById(R.id.etEmail)
-        etPassword=findViewById(R.id.etPassword)
-
-        btnLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
+            val intent=Intent(this, HomeActivity::class.java)
+            startActivity(intent)
             validateLogin()
 
         }
-        tvSignup.setOnClickListener {
-            var intent=Intent(this, HomeActivity::class.java)
+        binding.tvSignup.setOnClickListener {
+            val intent=Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
 
     }
     fun validateLogin(){
-        var error=true
-        val email= etEmail.text.toString()
-        val password= etPassword.text.toString()
+        val error=false
+        val email= binding.etEmail.text.toString()
+        val password= binding.etPassword.text.toString()
 
         if (email.isBlank()){
-            etEmail.error="Email is required"
+            binding.etEmail.error="Email is required"
 
         }
         if (password.isBlank()){
-            etPassword.error="Password is required"
+            binding.etPassword.error="Password is required"
         }
         if(!error){
-            var intent=Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+
     }
 
 }

@@ -3,82 +3,61 @@ package dev.anastasia.fitnessapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import com.google.android.material.textfield.TextInputLayout
+import dev.anastasia.fitnessapp.databinding.ActivitySignupBinding
 
 class SignupActivity : AppCompatActivity() {
-    lateinit var tvLogIn:TextView
-    lateinit var btnSignup:Button
-    lateinit var tilFirstName: TextInputLayout
-    lateinit var etFirstName: EditText
-    lateinit var tilLastName: TextInputLayout
-    lateinit var etLastName: EditText
-    lateinit var tilEmail: TextInputLayout
-    lateinit var etEmail: EditText
-    lateinit var tilPassword: TextInputLayout
-    lateinit var etPassword: EditText
-    lateinit var tilConfirmPassword: TextInputLayout
-    lateinit var etConfirmPassword: EditText
+lateinit var binding: ActivitySignupBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        var binding=ActivitySignupBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        tvLogIn=findViewById(R.id.tvLogIn)
-        btnSignup=findViewById(R.id.btnSignup)
-        tilFirstName = findViewById(R.id.tilFirstName)
-        etFirstName = findViewById(R.id.etFirstName)
-        tilLastName = findViewById(R.id.tilLastName)
-        etLastName = findViewById(R.id.etLastName)
-        tilEmail = findViewById(R.id.tilEmail)
-        etEmail = findViewById(R.id.etEmail)
-        tilPassword = findViewById(R.id.tilPassword)
-        etPassword = findViewById(R.id.etPassword)
-        tilConfirmPassword = findViewById(R.id.tilConfirmPassword)
-        etConfirmPassword = findViewById(R.id.etConfirmPassword)
+        lunchOnClick()
+    }
 
-        tvLogIn.setOnClickListener {
+fun lunchOnClick(){
+       binding. tvLogIn.setOnClickListener {
             var intent=Intent(this,LoginActivity::class.java)
             startActivity(intent)
         }
-       btnSignup.setOnClickListener {
+       binding.btnSignup.setOnClickListener {
+           var intent=Intent(this,HomeActivity::class.java)
+           startActivity(intent)
            validateSignup()
        }
+}
 
-    }
     fun validateSignup() {
-        var error=true
-        var firstName = etFirstName.text.toString()
-        var lastName = etLastName.text.toString()
-        var email = etEmail.text.toString()
-        var password = etPassword.text.toString()
-        var confirmpassword = etConfirmPassword.text.toString()
+        val error=false
+        val firstName =binding. etFirstName.text.toString()
+        var lastName = binding.etLastName.text.toString()
+        var email = binding.etEmail.text.toString()
+        var password = binding.etPassword.text.toString()
+        var confirmpassword = binding.etConfirmPassword.text.toString()
 
         if (firstName.isBlank()) {
-            etFirstName.error = "input is required"
+            binding.etFirstName.error = "input is required"
         }
         if (lastName.isBlank()) {
-            etLastName.error = "input is required"
+            binding.etLastName.error = "input is required"
         }
 
         if (email.isBlank()) {
-            etEmail.error = "input is required"
+            binding.etEmail.error = "input is required"
         }
 
         if (password.isBlank()) {
-            etPassword.error = "input is required"
+            binding. etPassword.error = "input is required"
         }
 
         if (confirmpassword.isBlank()) {
-            etConfirmPassword.error = "input is required"
+            binding. etConfirmPassword.error = "input is required"
         }
         if (password!=confirmpassword){
-            tilPassword.error="Passwords doesn't match "
+            binding. tilPassword.error="Passwords doesn't match "
         }
         if(!error){
-            var intent=Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+
         }
     }
 

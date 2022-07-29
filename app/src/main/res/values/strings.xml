@@ -1,22 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FitnessApp</string>
-    <string name="password">Password</string>
-    <string name="email">Email</string>
-    <string name="login">Login</string>
-    <string name="don_t_have_an_account_signup">Don/\'t have an account? Signup</string>
-    <string name="signup">Don\'t have an account? Signup</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="People" />
-    <string name="track" />
-    <string name="plan" />
+
+    <string name="profile_fragment">Profile fragment</string>
+    <string name="plan_fragment">Plan Fragment</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
-    <string name="email2">Email</string>
+    <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="already_have_an_account_login">Already have an account? Login</string>
-    <string name="signup2">Signup</string>
-    <string name="plan_fragment">PLAN FRAGMENT</string>
-    <string name="profile_fragment">PROFILE FRAGMENT</string>
-    <string name="track_fragement">TRACK FRAGEMENT</string>
-    <string name="track_fragment">TRACK FRAGMENT</string>
+    <string name="email">Email</string>
+    <string name="signup">SignUp</string>
+    <string name="already_have_an_account_login">Already have an account Login</string>
+    <string name="plan">Plan</string>
+    <string name="track">Track</string>
+    <string name="profile">Profile</string>
+    <string name="track_fragment">Track Fragment</string>
+
+
 </resources>
